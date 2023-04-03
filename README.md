@@ -1,42 +1,61 @@
-# CM4Stack_lv_fbdev
+# CM4Stack_LvglDemo
 
-Lvgl Demo for CM4STACK
+Lvgl simple clock demo for CM4STACK
 
-![](https://github.com/m5stack/m5stack-linux-dtoverlays/blob/main/examples/Lvgl/Basic/pic.png?raw=true)
+![](https://github.com/m5stack/m5stack-linux-dtoverlays/blob/main/examples/Lvgl/SimpleClock/pic.png?raw=true)
 
 #### File tree
 
 ```
 .
-├── demo.jpg
-├── LICENSE
+├── CMakeLists.txt
+├── CopyLib.sh
+├── README.md
+├── UI
 ├── lv_conf.h
-├── lv_drivers
 ├── lv_drv_conf.h
+├── lv_porting
 ├── lvgl
-├── main.c
-├── Makefile
-├── mouse_cursor_icon.c
-└── README.md
+├── main.cpp
+├── pic.png
+├── tick.c
+└── tick.h
 ```
 
+#### Update submodules
 
+```shell
+git submodule init
+git submodule update
+```
+
+#### Install SDL2
+
+```
+sudo apt update
+sudo apt install libsdl2-dev
+```
+
+#### Copy the Lvgl related library from example/Basic
+
+```shell
+# Run copy script
+./CopyLib.sh
+
+# Or Manually
+cp -r ../Basic/lv_porting .
+cp -r ../Basic/lvgl .
+```
 
 #### Build
 
-cm4stack
-```
-make
-```
-
-ubuntu cross compile
-```
-make CROSS=arm-linux-gnueabihf-
+```shell
+mkdir build && cd build
+cmake .. && make
 ```
 
 #### Run
 
+```shell
+./cm4LvglDemo
 ```
-./demo /dev/fb$(cat /proc/fb | grep fb_st7789v | awk '{print $1}')  /dev/input/event$(cat /proc/bus/input/devices | grep fe205000.i2c | tail -c 2)
-```
-![](./demo.jpg)

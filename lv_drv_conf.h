@@ -1,6 +1,6 @@
 /**
  * @file lv_drv_conf.h
- * Configuration file for v8.3.0-dev
+ * Configuration file for v9.0.0-dev
  */
 
 /*
@@ -86,7 +86,7 @@
 
 /* SDL based drivers for display, mouse, mousewheel and keyboard*/
 #ifndef USE_SDL
-# define USE_SDL 0
+# define USE_SDL 1
 #endif
 
 /* Hardware accelerated SDL driver */
@@ -95,8 +95,8 @@
 #endif
 
 #if USE_SDL || USE_SDL_GPU
-#  define SDL_HOR_RES     800
-#  define SDL_VER_RES     600
+#  define SDL_HOR_RES     240
+#  define SDL_VER_RES     320
 
 /* Scale window by this factor (useful when simulating small screens) */
 #  define SDL_ZOOM        1
@@ -320,18 +320,18 @@
 #endif
 
 #if USE_FBDEV
-#  define FBDEV_PATH          "/dev/fb0"
+#  define FBDEV_PATH          "/dev/fb1"
 #endif
 
 /*-----------------------------------------
  *  FreeBSD frame buffer device (/dev/fbx)
  *.........................................*/
 #ifndef USE_BSD_FBDEV
-#  define USE_BSD_FBDEV     0
+#  define USE_BSD_FBDEV		0
 #endif
 
 #if USE_BSD_FBDEV
-# define FBDEV_PATH     "/dev/fb0"
+# define FBDEV_PATH		"/dev/fb0"
 #endif
 
 /*-----------------------------------------
@@ -343,7 +343,7 @@
 
 #if USE_DRM
 #  define DRM_CARD          "/dev/dri/card0"
-#  define DRM_CONNECTOR_ID  -1  /* -1 for the first connected one */
+#  define DRM_CONNECTOR_ID  -1	/* -1 for the first connected one */
 #endif
 
 /*********************
@@ -447,7 +447,7 @@
 #endif
 
 #if USE_EVDEV || USE_BSD_EVDEV
-#  define EVDEV_NAME   "/dev/input/event0"        /*You can use the "evtest" Linux tool to get the list of devices and test them*/
+#  define EVDEV_NAME   "/dev/input/event2"        /*You can use the "evtest" Linux tool to get the list of devices and test them*/
 #  define EVDEV_SWAP_AXES         0               /*Swap the x and y axes of the touchscreen*/
 
 #  define EVDEV_CALIBRATE         0               /*Scale and offset the touchscreen coordinates by using maximum and minimum values for each axis*/
