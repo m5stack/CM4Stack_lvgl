@@ -16,14 +16,7 @@ add_subdirectory(lvgl)
 add_subdirectory(lv_porting)
 
 
-# Clock UI
-file(GLOB CLOCK_UI_SRCS 
-    UI/*.c
-)
-include_directories(UI)
-
-
-add_executable(cm4LvglDemo main.cpp ${CLOCK_UI_SRCS})
+add_executable(cm4LvglDemo main.cpp)
 target_link_libraries(cm4LvglDemo
     lvgl
     lvgl_porting
