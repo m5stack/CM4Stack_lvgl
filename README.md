@@ -2,7 +2,7 @@
 
 Lvgl Demo for CM4STACK
 
-![](https://github.com/m5stack/CM4Stack_lvgl_fbdev/tree/Basic/pic.png?raw=true)
+![](https://github.com/m5stack/CM4Stack_lvgl_fbdev/blob/Basic/pic.png?raw=true)
 
 #### File tree
 
