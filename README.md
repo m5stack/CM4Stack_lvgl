@@ -2,7 +2,7 @@
 
 Lvgl simple clock demo for CM4STACK
 
-![](https://github.com/m5stack/CM4Stack_lvgl_fbdev/blob/Basic/pic.png?raw=true)
+![](https://github.com/m5stack/CM4Stack_lvgl/blob/SimpleClock/pic.png?raw=true)
 
 #### File tree
 
